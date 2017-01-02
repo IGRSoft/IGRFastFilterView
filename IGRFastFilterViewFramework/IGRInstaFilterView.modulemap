@@ -9,6 +9,8 @@
 framework module IGRFastFilterView {
     umbrella header "IGRFastFilterView.h"
     
+    header "IGRFiltersbarCollectionView.h"
+    
     module * { export * }
     export *
 }

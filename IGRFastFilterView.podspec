@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
                                 :tag => s.version
                             }
 
-  s.public_header_files     = 'IGRFastFilterView/*.h'
+  s.public_header_files     = 'IGRFastFilterView/*.h', 'IGRFastFilterView/CustomViews/*.h'
   s.source_files            = 'IGRFastFilterView/**/*.{h,m}'
   s.resources               = 'Resources/IGRFastFilterViewResources.bundle'
   s.requires_arc            = true

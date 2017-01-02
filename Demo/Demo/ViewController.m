@@ -6,19 +6,20 @@
 //  Copyright © 2016 IGR Software. All rights reserved.
 //
 
-#import "IGRMainViewController.h"
-#import "IGRBaseShaderFilter.h"
+@import IGRFastFilterView;
 
-#import "IGRInstaFiltersView.h"
-#import "IGRFiltersbarCollectionView.h"
+#import "ViewController.h"
 
-@interface IGRMainViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, weak) IBOutlet IGRInstaFiltersView *instaFiltersView;
+@property (nonatomic, weak) IBOutlet IGRFastFilterView *instaFiltersView;
 
 @end
 
-@implementation IGRMainViewController
+static NSString * const kWorkImageNotification = @"WorkImageNotification";
+#define DEMO_IMAGE [UIImage imageNamed:@"demo"]
+
+@implementation ViewController
 
 #pragma mark - Life Cycle
 
@@ -63,7 +64,7 @@
 
 - (void)setupTheme
 {
-    [IGRInstaFiltersView appearance].backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+    [IGRFastFilterView appearance].backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0];
     [IGRFiltersbarCollectionView appearance].backgroundColor = [UIColor colorWithWhite:0.9 alpha:1.0];
 }
 

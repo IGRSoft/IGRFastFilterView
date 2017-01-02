@@ -121,6 +121,8 @@
 {
     [self updateZoomScale];
     [self zoomOutAnimated:YES];
+    
+    [self.filterbar layoutSubviews];
 }
 
 - (void)updateZoomScale

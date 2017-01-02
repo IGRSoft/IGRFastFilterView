@@ -2,10 +2,10 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'InstaFilters' do
+source "https://github.com/CocoaPods/Specs.git"
 
-	pod 'GPUImage'
+target 'Demo' do
+
+	pod 'IGRFastFilterView', :path => '../'
 
 end
-
-
