@@ -25,6 +25,7 @@
     layout.headerReferenceSize = layout.footerReferenceSize = CGSizeZero;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.sectionInset = UIEdgeInsetsZero;
+    
     if (self = [super initWithFrame:frame collectionViewLayout:layout])
     {
         _items = [NSBundle getFilters];

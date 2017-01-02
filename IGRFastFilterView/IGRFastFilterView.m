@@ -99,18 +99,18 @@
 {
     NSDictionary *views = @{@"scrollView" : self.scrollView, @"filterbar" : self.filterbar};
     
-    NSArray *horizontalConstraints =[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[scrollView]-0-[filterbar(120)]-0-|"
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[scrollView]-0-[filterbar(120)]-0-|"
+                                                                             options:0
+                                                                             metrics:nil
+                                                                               views:views];
+    NSArray *verticalConstraints1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[scrollView]-0-|"
                                                                             options:0
                                                                             metrics:nil
                                                                               views:views];
-    NSArray *verticalConstraints1 =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[scrollView]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:views];
-    NSArray *verticalConstraints2 =[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[filterbar]-0-|"
-                                                                           options:0
-                                                                           metrics:nil
-                                                                             views:views];
+    NSArray *verticalConstraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[filterbar]-0-|"
+                                                                            options:0
+                                                                            metrics:nil
+                                                                              views:views];
     
     [self addConstraints:horizontalConstraints];
     [self addConstraints:verticalConstraints1];
@@ -119,10 +119,10 @@
 
 - (void)layoutSubviews
 {
+    [super layoutSubviews];
+    
     [self updateZoomScale];
     [self zoomOutAnimated:YES];
-    
-    [self.filterbar layoutSubviews];
 }
 
 - (void)updateZoomScale
@@ -205,11 +205,11 @@
     else
     {
         self.cancelFilterProcess = [self.shaderFilter processImage:originalImage
-                                                    completeBlock:^(UIImage * _Nullable processedImage) {
-                                                        compleatBlock(processedImage);
-                                                        [weak.filterCache setObject:processedImage
-                                                                             forKey:weak.shaderFilter];
-                                                    }];
+                                                     completeBlock:^(UIImage * _Nullable processedImage) {
+                                                         compleatBlock(processedImage);
+                                                         [weak.filterCache setObject:processedImage
+                                                                              forKey:weak.shaderFilter];
+                                                     }];
     }
 }
 
@@ -272,9 +272,16 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
     [cell setSelected:NO];
 }
 
+- (CGSize)collectionView:(IGRFiltersbarCollectionView *)collectionView
+                  layout:(nonnull UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
+{
+    return [collectionView cellSize];
+}
+
 - (CGFloat)igr_borderOffsetFromFiltersbar:(IGRFiltersbarCollectionView *)collectionView
 {
-    return collectionView.frame.size.height * 0.5;;
+    return collectionView.frame.size.height * 0.5;
 }
 
 @end

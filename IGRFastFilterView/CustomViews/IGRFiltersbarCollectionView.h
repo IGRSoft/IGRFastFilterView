@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 
 - (NSString *)cellIdentifier;
+- (CGSize)cellSize;
 
 - (void)updateWorkImage:(UIImage *)workImage;
 
