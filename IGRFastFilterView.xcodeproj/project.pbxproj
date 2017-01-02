@@ -461,7 +461,6 @@
 					};
 					A5B63BDF1E16430C000E5F2C = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = DMP42GVPJ3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -723,9 +722,8 @@
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IGRFastFilterViewResources/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrsoft.IGRInstaFilterResources;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -740,9 +738,8 @@
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = DMP42GVPJ3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IGRFastFilterViewResources/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrsoft.IGRInstaFilterResources;
 				PRODUCT_NAME = "$(TARGET_NAME)";
