@@ -1,0 +1,21 @@
+//
+//  IGRPrefix.pch
+//  InstaFilters
+//
+//  Created by Vitalii Parovishnyk on 12/29/16.
+//  Copyright © 2016 IGR Software. All rights reserved.
+//
+
+#ifndef IGRPrefix_pch
+#define IGRPrefix_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+static NSString * const kWorkImageNotification = @"WorkImageNotification";
+
+#define DEMO_IMAGE [UIImage imageNamed:@"demo"]
+
+#endif /* IGRPrefix_pch */

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h40-7L-fap">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="IGRMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbY-Kz-M76" customClass="IGRInstaFiltersView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AbY-Kz-M76" secondAttribute="trailing" id="5gn-U6-8aH"/>
+                            <constraint firstItem="AbY-Kz-M76" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cxm-3I-MIf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AbY-Kz-M76" secondAttribute="bottom" id="IZg-56-RNs"/>
+                            <constraint firstItem="AbY-Kz-M76" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zn5-gV-ffZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yWn-ie-7NE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="camera" id="yjo-89-xmJ">
+                            <connections>
+                                <action selector="onTouchGetImageButton:" destination="BYZ-38-t0r" id="jsw-k3-GH4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="y7m-NX-COi">
+                            <connections>
+                                <action selector="onTouchShareButton:" destination="BYZ-38-t0r" id="FhD-EX-EWO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="instaFiltersView" destination="AbY-Kz-M76" id="i2e-mf-ZmF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="354.87256371814095"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fpg-gl-FEe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h40-7L-fap" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aUb-GY-5m7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ic0-vA-ARQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMa-7w-jb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.80000000000001" y="354.87256371814095"/>
+        </scene>
+    </scenes>
+</document>
