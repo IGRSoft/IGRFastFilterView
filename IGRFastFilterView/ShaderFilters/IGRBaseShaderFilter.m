@@ -336,21 +336,28 @@
         }
         
         [weak useNextFrameForImageCapture];
-        UIImage *resultImage = [weak imageFromCurrentFramebufferWithOrientation:UIImageOrientationUp];
-        if (isCanceled)
-        {
-            return;
-        }
+        UIImage *resultImage = nil;
         
-        if (CGSizeEqualToSize(resultImage.size, CGSizeZero)) {
-            innerCancel = [self processImage:image completeBlock:completeBlock];
+        @try {
+            resultImage = [weak imageFromCurrentFramebufferWithOrientation:UIImageOrientationUp];
+        } @catch (NSException *exception) {
             
-            return;
+        } @finally {
+            if (isCanceled)
+            {
+                return;
+            }
+            
+            if (CGSizeEqualToSize(resultImage.size, CGSizeZero)) {
+                innerCancel = [self processImage:image completeBlock:completeBlock];
+                
+                return;
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completeBlock(resultImage);
+            });
         }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completeBlock(resultImage);
-        });
     }];
     
     __weak typeof(operation) weakOperation = operation;

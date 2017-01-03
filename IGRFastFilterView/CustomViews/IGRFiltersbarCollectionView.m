@@ -96,6 +96,11 @@
 
 - (void)updateWorkImage:(UIImage *)workImage
 {
+    [self.items enumerateObjectsUsingBlock:^(IGRBaseShaderFilter *filter, NSUInteger idx, BOOL * _Nonnull stop) {
+        [filter removeAllTargets];
+        [filter removeOutputFramebuffer];
+    }];
+    
     _items = [NSBundle getFilters];
         
     self.thumbImage = [workImage igr_aspectFillImageWithSize:[self previewSize]];
