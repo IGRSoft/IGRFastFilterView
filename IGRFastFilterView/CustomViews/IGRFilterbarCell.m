@@ -11,6 +11,8 @@
 
 @interface IGRFilterbarCell ()
 
+@property (nonatomic, weak) __kindof IGRBaseShaderFilter *item;
+
 @property (nonatomic, weak) IBOutlet UILabel     *title;
 @property (nonatomic, weak) IBOutlet UIImageView *icon;
 
@@ -27,7 +29,7 @@
     super.selected = selected;
 }
 
-- (void)setItem:(__kindof IGRBaseShaderFilter *)item
+- (void)setItem:(__kindof IGRBaseShaderFilter *)item withThumbImage:(UIImage *)thumbImage
 {
     _item = item;
     
@@ -35,11 +37,8 @@
     self.icon.image = nil;
     
     __weak typeof(self) weak = self;
-    [self.item preview:^(UIImage * _Nullable processedImage) {
-        if (weak.item == item)
-        {
-            weak.icon.image = processedImage;
-        }
+    [self.item processImage:thumbImage completeBlock:^(UIImage * _Nullable processedImage) {
+        self.icon.image = processedImage;
     }];
 }
 

@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (IGRInstaFilters)
 
+- (UIImage *)igr_imageWithDefaultOrientation;
 - (UIImage *)igr_aspectFillImageWithSize:(CGSize)size;
 
 @end

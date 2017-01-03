@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IGRFilterbarCell : UICollectionViewCell
 
-@property (nonatomic, weak) __kindof IGRBaseShaderFilter *item;
-
 @property (nonatomic, strong) UIColor   *textColor;
 @property (nonatomic, strong) UIColor   *highlightTextColor;
+
+- (void)setItem:(__kindof IGRBaseShaderFilter *)item withThumbImage:(UIImage *)thumbImage;
 
 @end
 

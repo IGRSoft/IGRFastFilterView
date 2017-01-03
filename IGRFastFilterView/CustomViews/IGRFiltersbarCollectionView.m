@@ -20,6 +20,8 @@
 @property (nonatomic, strong) UIColor   *filterBarCellTextColor;
 @property (nonatomic, strong) UIColor   *filterBarCellHighlightTextColor;
 
+@property (nonatomic, strong) UIImage   *thumbImage;
+
 @end
 
 @implementation IGRFiltersbarCollectionView
@@ -81,7 +83,11 @@
     IGRFilterbarCell *cell = [self dequeueReusableCellWithReuseIdentifier:[self cellIdentifier]
                                                              forIndexPath:indexPath];
     
-    [cell setItem:self.items[indexPath.item]];
+    if (self.thumbImage)
+    {
+        [cell setItem:self.items[indexPath.item] withThumbImage:self.thumbImage];
+    }
+    
     cell.textColor = self.filterBarCellTextColor;
     cell.highlightTextColor = self.filterBarCellHighlightTextColor;
     
@@ -90,15 +96,13 @@
 
 - (void)updateWorkImage:(UIImage *)workImage
 {
-    [self.items makeObjectsPerformSelector:@selector(reset)];
+    [self.items enumerateObjectsUsingBlock:^(IGRBaseShaderFilter *filter, NSUInteger idx, BOOL * _Nonnull stop) {
+        [filter reset];
+    }];
     
     NSMutableArray *items = [self.items mutableCopy];
     
-    UIImage *img = [workImage igr_aspectFillImageWithSize:[self previewSize]];
-    
-    [items enumerateObjectsUsingBlock:^(IGRBaseShaderFilter *item, NSUInteger idx, BOOL * _Nonnull stop) {
-        [item processPreview:img completeBlock:^(UIImage * _Nullable processedImage) {}];
-    }];
+    self.thumbImage = [workImage igr_aspectFillImageWithSize:[self previewSize]];
     
     [self reloadData];
 }

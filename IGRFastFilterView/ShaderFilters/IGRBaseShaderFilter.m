@@ -42,10 +42,7 @@
 @property (nonatomic, copy  ) NSString *shaderName;
 
 @property (nonatomic, strong) NSArray <GPUImagePicture *> *resources;
-@property (atomic   , strong) NSMutableArray<IGRBaseShaderFilterCompletionBlock> *completionBlocks;
 @property (nonatomic, strong) NSOperationQueue *drawQueue;
-
-@property (atomic   , strong, nullable, readwrite) UIImage *preview;
 
 @end
 
@@ -67,7 +64,6 @@
         _shaderName = shaderName;
         _displayName = aDictionary[kSFXBaseShaderNameKey];
         _resources = [self resourcesForFiles:aDictionary[kSFXBaseShaderResourceKey]];
-        _preview = nil;
         
         static NSOperationQueue *filterQueue;
         static dispatch_once_t onceToken;
@@ -77,8 +73,6 @@
         });
         
         _drawQueue = filterQueue;
-        
-        _completionBlocks = [NSMutableArray new];
     }
     
     return self;
@@ -313,7 +307,7 @@
 }
 
 - (IGRBaseShaderFilterCancelBlock)processImage:(UIImage *)image
-                                completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock
+                                 completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock
 {
     __weak typeof(self) weak = self;
     __block IGRBaseShaderFilterCancelBlock innerCancel = nil;
@@ -337,7 +331,7 @@
             {
                 [p addTarget:weak atTextureLocation:location++];
             }
-        
+            
             [p processImage];
         }
         
@@ -355,17 +349,7 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if (isCanceled)
-            {
-                return;
-            }
-            
             completeBlock(resultImage);
-            NSArray *arr = [weak.completionBlocks copy];
-            for (void(^block)() in [weak.completionBlocks copy]) {
-                block(resultImage);
-            }
         });
     }];
     
@@ -376,40 +360,17 @@
         isCanceled = YES;
         [weakOperation cancel];
         
-        if (innerCancel) {
+        if (innerCancel)
+        {
             innerCancel();
         }
     };
 }
 
-- (void)preview:(IGRBaseShaderFilterCompletionBlock)completion
-{
-    if (self.preview)
-    {
-        completion(self.preview);
-    }
-    else
-    {
-        [self.completionBlocks addObject:[completion copy]];
-    }
-}
-
-- (void)processPreview:(UIImage *)image
-        completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock
-{
-    __weak typeof(self) weak = self;
-    [self processImage:image completeBlock:^(UIImage * _Nullable processedImage) {
-        
-        weak.preview = processedImage;
-        completeBlock(processedImage);
-    }];
-}
-
 - (void)reset
 {
-    self.preview = nil;
-    
     [self.drawQueue cancelAllOperations];
+    [self removeAllTargets];
 }
 
 @end

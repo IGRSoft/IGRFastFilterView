@@ -10,6 +10,7 @@
 #import "IGRBaseShaderFilter.h"
 #import "IGRFiltersbarCollectionView.h"
 #import "IGRFastFilterViewCustomizer.h"
+#import "UIImage+IGRFastFilterView.h"
 
 @interface IGRFastFilterView ()   <UIScrollViewDelegate,
                                     UICollectionViewDelegate, UICollectionViewDataSource>
@@ -177,12 +178,13 @@
 
 - (void)setImage:(UIImage *)image
 {
+    UIImage *fixedImage = [image igr_imageWithDefaultOrientation];
     [self.filterCache removeAllObjects];
     
-    originalImage = image;
+    originalImage = fixedImage;
 
-    [self resetViewForImage:image];
-    [self.filterBarView updateWorkImage:image];
+    [self.filterBarView updateWorkImage:fixedImage];
+    [self resetViewForImage:fixedImage];
 }
 
 - (void)setShaderFilter:(__kindof IGRBaseShaderFilter *)shaderFilter

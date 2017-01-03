@@ -6,7 +6,7 @@
 		<key>name</key>
 		<string>Original</string>
 		<key>class</key>
-		<string>IGROriginalShaderFilter</string>
+		<string>IGRBaseShaderFilter</string>
 		<key>shader</key>
 		<string>IFOriginalFilter</string>
 		<key>resources</key>

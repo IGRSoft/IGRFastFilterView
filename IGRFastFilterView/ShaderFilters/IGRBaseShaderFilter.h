@@ -22,11 +22,6 @@ typedef void(^IGRBaseShaderFilterCancelBlock)();
 - (IGRBaseShaderFilterCancelBlock)processImage:(UIImage *)image
                                 completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock;
 
-- (void)processPreview:(UIImage *)image
-        completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock;
-
-- (void)preview:(IGRBaseShaderFilterCompletionBlock)completion;
-
 - (void)reset;
 
 @end
