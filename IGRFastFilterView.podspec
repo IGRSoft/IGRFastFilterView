@@ -10,7 +10,6 @@ Pod::Spec.new do |s|
   s.description  = <<-DESC
                    IGRFastFilterView provides:
                    * Apply Instagram like filters
-                   * Add fsh shaders
                    DESC
 
   s.homepage            = 'https://igrsoft.com'
