@@ -96,12 +96,8 @@
 
 - (void)updateWorkImage:(UIImage *)workImage
 {
-    [self.items enumerateObjectsUsingBlock:^(IGRBaseShaderFilter *filter, NSUInteger idx, BOOL * _Nonnull stop) {
-        [filter reset];
-    }];
-    
-    NSMutableArray *items = [self.items mutableCopy];
-    
+    _items = [NSBundle getFilters];
+        
     self.thumbImage = [workImage igr_aspectFillImageWithSize:[self previewSize]];
     
     [self reloadData];

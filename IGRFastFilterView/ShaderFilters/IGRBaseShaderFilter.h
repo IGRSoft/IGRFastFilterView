@@ -20,9 +20,7 @@ typedef void(^IGRBaseShaderFilterCancelBlock)();
 @property (nonatomic, copy  , nullable) NSString *displayName;
 
 - (IGRBaseShaderFilterCancelBlock)processImage:(UIImage *)image
-                                completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock;
-
-- (void)reset;
+                                 completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock;
 
 @end
 

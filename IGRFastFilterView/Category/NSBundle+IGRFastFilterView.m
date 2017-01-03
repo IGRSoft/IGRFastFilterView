@@ -75,7 +75,7 @@
         filters = [_filters copy];
     });
     
-    return filters;
+    return [filters copy];
 }
 
 @end
