@@ -17,17 +17,16 @@
     UIImage *originalImage;
 }
 
-@property (nonatomic, nullable, weak) UIScrollView *scrollView;
-@property (nonatomic, nullable, weak) UIImageView *imageView;
-@property (nonatomic, nullable, weak) IGRFiltersbarCollectionView *filterBarView;
+@property (nonatomic, nullable, weak ) UIScrollView *scrollView;
+@property (nonatomic, nullable, weak ) UIImageView *imageView;
+@property (nonatomic, nullable, weak ) IGRFiltersbarCollectionView *filterBarView;
 
 @property (nonatomic, nonnull, strong) __kindof IGRBaseShaderFilter *shaderFilter;
 
-@property (nonatomic, nonnull, strong, readwrite) UIImage *processedImage;
+@property (nonatomic, nullable, strong, readwrite) UIImage *processedImage;
 
-@property (nonatomic, copy) IGRBaseShaderFilterCancelBlock cancelFilterProcess;
+@property (nonatomic, copy  ) IGRBaseShaderFilterCancelBlock cancelFilterProcess;
 @property (nonatomic, strong) NSCache *filterCache;
-
 
 @property (nonatomic, assign) CGFloat filterBarHeight;
 
@@ -171,15 +170,19 @@
     self.scrollView.contentSize = self.imageView.bounds.size;
     
     [self zoomOutAnimated:NO];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self collectionView:self.filterBarView didSelectItemAtIndexPath:indexPath];
 }
 
 - (void)setImage:(UIImage *)image
 {
+    [self.filterCache removeAllObjects];
+    
     originalImage = image;
-    self.processedImage = image;
 
-    [self.filterBarView updateWorkImage:image];
     [self resetViewForImage:image];
+    [self.filterBarView updateWorkImage:image];
 }
 
 - (void)setShaderFilter:(__kindof IGRBaseShaderFilter *)shaderFilter
@@ -258,7 +261,7 @@
 
 - (void)collectionView:(IGRFiltersbarCollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+{    
     self.shaderFilter = collectionView.items[indexPath.row];
     
     CGFloat borderOffset = [self igr_borderOffsetFromFiltersbar:collectionView];

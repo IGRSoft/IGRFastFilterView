@@ -14,11 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IGRFastFilterView : UIView
 
-@property (nonatomic, strong, readonly) UIImage *processedImage;
+@property (nonatomic, strong, nullable, readonly) UIImage *processedImage;
 
 - (void)setImage:(UIImage *)image;
-
-#pragma mark - Customization
 
 @end
 

@@ -320,27 +320,31 @@
     __block BOOL isCanceled = false;
     
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:^{
-        if (isCanceled) {
+        if (isCanceled)
+        {
             return;
         }
         
-        UIImage *resultImage;
         NSUInteger location = 0;
         GPUImagePicture *picture = [[GPUImagePicture alloc] initWithImage:image];
         [picture addTarget:weak atTextureLocation:location++];
         [picture processImage];
         
         NSArray *resources = weak.resources;
-        for (GPUImagePicture *p in resources) {
-            if (![p.targets containsObject:weak]) {
+        for (GPUImagePicture *p in resources)
+        {
+            if (![p.targets containsObject:weak])
+            {
                 [p addTarget:weak atTextureLocation:location++];
             }
+        
             [p processImage];
         }
         
         [weak useNextFrameForImageCapture];
-        resultImage = [weak imageFromCurrentFramebufferWithOrientation:UIImageOrientationUp];
-        if (isCanceled) {
+        UIImage *resultImage = [weak imageFromCurrentFramebufferWithOrientation:UIImageOrientationUp];
+        if (isCanceled)
+        {
             return;
         }
         
@@ -351,7 +355,9 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (isCanceled) {
+            
+            if (isCanceled)
+            {
                 return;
             }
             
@@ -360,20 +366,15 @@
             for (void(^block)() in [weak.completionBlocks copy]) {
                 block(resultImage);
             }
-            NSInteger count = arr.count;
-            while (count > 0) {
-                [weak.completionBlocks removeObjectAtIndex:0];
-                count--;
-            }
         });
     }];
     
+    __weak typeof(operation) weakOperation = operation;
     [self.drawQueue addOperation:operation];
-    __weak typeof(operation) wOperation = operation;
     
     return ^{
         isCanceled = YES;
-        [wOperation cancel];
+        [weakOperation cancel];
         
         if (innerCancel) {
             innerCancel();
@@ -407,6 +408,8 @@
 - (void)reset
 {
     self.preview = nil;
+    
+    [self.drawQueue cancelAllOperations];
 }
 
 @end

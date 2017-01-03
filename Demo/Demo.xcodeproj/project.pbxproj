@@ -29,6 +29,7 @@
 		A5BCAFB21E1AA9D2007D6E03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5BCAFB51E1AA9D2007D6E03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5BCAFB71E1AA9D2007D6E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5DD7B151E1BA135000803E4 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		D4B1ED565DEA3B13818A6CCA /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +99,7 @@
 		DA892B01FB2786F30E73AD75 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5DD7B151E1BA135000803E4 /* AssetsLibrary.framework */,
 				4AB645674FD95388967C822E /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
@@ -389,6 +391,7 @@
 				A5BCAFBC1E1AA9D2007D6E03 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

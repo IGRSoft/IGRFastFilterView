@@ -81,7 +81,6 @@
     IGRFilterbarCell *cell = [self dequeueReusableCellWithReuseIdentifier:[self cellIdentifier]
                                                              forIndexPath:indexPath];
     
-    cell.selected = !indexPath.item;
     [cell setItem:self.items[indexPath.item]];
     cell.textColor = self.filterBarCellTextColor;
     cell.highlightTextColor = self.filterBarCellHighlightTextColor;

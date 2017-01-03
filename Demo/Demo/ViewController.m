@@ -167,7 +167,7 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 #pragma mark - PickerDelegates
 
 - (void)imagePickerController:(UIImagePickerController *)picker
-didFinishPickingMediaWithInfo:(NSDictionary *)info
+didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {    
     [picker dismissViewControllerAnimated:YES completion:nil];
     
