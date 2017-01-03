@@ -19,15 +19,13 @@ typedef void(^IGRBaseShaderFilterCancelBlock)();
 
 @property (nonatomic, copy  , nullable) NSString *displayName;
 
-@property (atomic   , strong, nullable, readonly) UIImage *preview;
-
 - (IGRBaseShaderFilterCancelBlock)processImage:(UIImage *)image
                                 completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock;
 
 - (void)processPreview:(UIImage *)image
         completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock;
 
-- (void)getPreview:(IGRBaseShaderFilterCompletionBlock)completion;
+- (void)preview:(IGRBaseShaderFilterCompletionBlock)completion;
 
 - (void)reset;
 

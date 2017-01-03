@@ -9,6 +9,7 @@
 #import "IGRFastFilterView.h"
 #import "IGRBaseShaderFilter.h"
 #import "IGRFiltersbarCollectionView.h"
+#import "IGRFastFilterViewCustomizer.h"
 
 @interface IGRFastFilterView ()   <UIScrollViewDelegate,
                                     UICollectionViewDelegate, UICollectionViewDataSource>
@@ -18,31 +19,26 @@
 
 @property (nonatomic, nullable, weak) UIScrollView *scrollView;
 @property (nonatomic, nullable, weak) UIImageView *imageView;
-@property (nonatomic, nullable, weak) IGRFiltersbarCollectionView *filterbar;
+@property (nonatomic, nullable, weak) IGRFiltersbarCollectionView *filterBarView;
 
 @property (nonatomic, nonnull, strong) __kindof IGRBaseShaderFilter *shaderFilter;
 
-@property (nonatomic, nonnull, strong, readwrite) UIImage *workImage;
+@property (nonatomic, nonnull, strong, readwrite) UIImage *processedImage;
 
 @property (nonatomic, copy) IGRBaseShaderFilterCancelBlock cancelFilterProcess;
 @property (nonatomic, strong) NSCache *filterCache;
+
+
+@property (nonatomic, assign) CGFloat filterBarHeight;
 
 @end
 
 @implementation IGRFastFilterView
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    
-    self.filterCache = [NSCache new];
-    self.filterCache.countLimit = 5;
-}
-
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
-    self = [super initWithCoder:coder];
-    if (self) {
+    if (self = [super initWithCoder:coder])
+    {
         [self setupView];
     }
     
@@ -51,15 +47,22 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
+    if (self = [super initWithFrame:frame])
+    {
         [self setupView];
     }
     
     return self;
 }
+
 - (void)setupView
 {
+    IGRFastFilterViewCustomizer *customizer = [IGRFastFilterViewCustomizer defaultCustomizer];
+    self.filterBarHeight = customizer.filterBarHeight;
+    
+    self.filterCache = [NSCache new];
+    self.filterCache.countLimit = customizer.cacheSize;
+    
     [self addFilterBar];
     [self addImageView];
     [self adjustViews];
@@ -67,14 +70,14 @@
 
 - (void)addFilterBar
 {
-    IGRFiltersbarCollectionView *filterbar = [[IGRFiltersbarCollectionView alloc] initWithFrame:self.frame];
+    IGRFiltersbarCollectionView *filterBarView = [[IGRFiltersbarCollectionView alloc] initWithFrame:self.frame];
     
-    [filterbar setDataSource:self];
-    [filterbar setDelegate:self];
+    [filterBarView setDataSource:self];
+    [filterBarView setDelegate:self];
     
-    filterbar.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:filterbar];
-    self.filterbar = filterbar;
+    filterBarView.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:filterBarView];
+    self.filterBarView = filterBarView;
 }
 
 - (void)addImageView
@@ -97,17 +100,18 @@
 
 - (void)adjustViews
 {
-    NSDictionary *views = @{@"scrollView" : self.scrollView, @"filterbar" : self.filterbar};
+    NSDictionary *views = @{@"scrollView" : self.scrollView, @"filterBarView" : self.filterBarView};
+    NSDictionary *metrics = @{@"filterBarHeight": @(self.filterBarHeight)};
     
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[scrollView]-0-[filterbar(120)]-0-|"
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[scrollView]-0-[filterBarView(filterBarHeight)]-0-|"
                                                                              options:0
-                                                                             metrics:nil
+                                                                             metrics:metrics
                                                                                views:views];
     NSArray *verticalConstraints1 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[scrollView]-0-|"
                                                                             options:0
                                                                             metrics:nil
                                                                               views:views];
-    NSArray *verticalConstraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[filterbar]-0-|"
+    NSArray *verticalConstraints2 = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-0-[filterBarView]-0-|"
                                                                             options:0
                                                                             metrics:nil
                                                                               views:views];
@@ -121,7 +125,6 @@
 {
     [super layoutSubviews];
     
-    [self updateZoomScale];
     [self zoomOutAnimated:YES];
 }
 
@@ -135,47 +138,48 @@
 
 - (void)zoomOutAnimated:(BOOL)animated
 {
+    [self updateZoomScale];
+    
     CGFloat difH = (self.scrollView.frame.size.height / self.imageView.bounds.size.height);
     CGFloat difW = (self.scrollView.frame.size.width / self.imageView.bounds.size.width);
     CGFloat zoomScale = MAX(difH, difW);
     [self.scrollView setZoomScale:zoomScale animated:animated];
     [self scrollViewDidZoom:self.scrollView];
     
-    CGSize newSize = CGSizeMake(self.scrollView.frame.size.width / zoomScale, self.scrollView.frame.size.height / zoomScale);
+    CGSize newSize = CGSizeMake(self.scrollView.frame.size.width / zoomScale,
+                                self.scrollView.frame.size.height / zoomScale);
+    
     CGPoint offset = CGPointMake((self.imageView.bounds.size.width - newSize.width) * 0.5,
                                  (self.imageView.bounds.size.height - newSize.height) * 0.5);
     offset = CGPointMake(offset.x * zoomScale, offset.y * zoomScale);
+    
     [self.scrollView setContentOffset:offset animated:animated];
 }
 
-- (void)updateImage:(UIImage *)anImage
+- (void)setProcessedImage:(UIImage *)processedImage
 {
-    self.workImage = anImage;
+    _processedImage = processedImage;
     
-    self.imageView.image = anImage;
+    self.imageView.image = processedImage;
     [self.imageView setNeedsDisplay];
 }
 
-- (void)resetViewForImage:(UIImage *)anImage
+- (void)resetViewForImage:(UIImage *)image
 {
     self.scrollView.zoomScale = 1.0;
-    self.imageView.frame = CGRectMake(0, 0, anImage.size.width, anImage.size.height);
+    self.imageView.frame = CGRectMake(0, 0, image.size.width, image.size.height);
     self.scrollView.contentSize = self.imageView.bounds.size;
     
-    [self updateZoomScale];
     [self zoomOutAnimated:NO];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self collectionView:self.filterbar didSelectItemAtIndexPath:indexPath];
 }
 
-- (void)setupImage:(UIImage *)anImage
+- (void)setImage:(UIImage *)image
 {
-    originalImage = anImage;
-    
-    [self updateImage:anImage];
-    [self.filterbar updateWorkImage:anImage];
-    [self resetViewForImage:anImage];
+    originalImage = image;
+    self.processedImage = image;
+
+    [self.filterBarView updateWorkImage:image];
+    [self resetViewForImage:image];
 }
 
 - (void)setShaderFilter:(__kindof IGRBaseShaderFilter *)shaderFilter
@@ -192,7 +196,7 @@
     
     void(^compleatBlock)(UIImage *) = ^(UIImage *image) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [weak updateImage:image];
+            weak.processedImage = image;
             [weak setProgress:NO];
         });
     };
@@ -276,7 +280,7 @@ didDeselectItemAtIndexPath:(NSIndexPath *)indexPath
                   layout:(nonnull UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    return [collectionView cellSize];
+    return collectionView.cellSize;
 }
 
 - (CGFloat)igr_borderOffsetFromFiltersbar:(IGRFiltersbarCollectionView *)collectionView

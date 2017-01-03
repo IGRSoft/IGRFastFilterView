@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray <IGRBaseShaderFilter *> *items;
 
-- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath;
+@property (nonatomic, copy  , readonly) NSString *cellIdentifier;
+@property (nonatomic, assign, readonly) CGSize cellSize;
 
-- (NSString *)cellIdentifier;
-- (CGSize)cellSize;
+- (__kindof UICollectionViewCell *)dequeueReusableCellWithReuseIdentifierAtIndexPath:(NSIndexPath *)indexPath;
 
 - (void)updateWorkImage:(UIImage *)workImage;
 

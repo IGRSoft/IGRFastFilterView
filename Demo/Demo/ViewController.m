@@ -60,6 +60,13 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 }
 
+#pragma mark - Setter / Getter
+
+- (void)setInstaFiltersView:(IGRFastFilterView *)instaFiltersView
+{    
+    _instaFiltersView = instaFiltersView;
+}
+
 #pragma mark - Private
 
 - (void)setupTheme
@@ -76,7 +83,7 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 
 - (UIImage *)prepareImage
 {
-    UIImage *image = [self.instaFiltersView.workImage copy];
+    UIImage *image = [self.instaFiltersView.processedImage copy];
     
     return image;
 }
@@ -154,7 +161,7 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 {
     NSAssert([notification.object isKindOfClass:[UIImage class]], @"Image only allowed!");
     
-    [self.instaFiltersView setupImage:notification.object];
+    [self.instaFiltersView setImage:notification.object];
 }
 
 #pragma mark - PickerDelegates

@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
   s.source_files            = 'IGRFastFilterView/**/*.{h,m}'
   s.resources               = 'Resources/IGRFastFilterViewResources.bundle'
   s.requires_arc            = true
-  s.weak_frameworks         = 'UIKit', 'Foundation'
+  s.weak_frameworks         = 'UIKit', 'Foundation', 'CoreGraphics'
 
   s.ios.dependency 'GPUImage', '0.1.7'
 end

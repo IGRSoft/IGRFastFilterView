@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) __kindof IGRBaseShaderFilter *item;
 
+@property (nonatomic, strong) UIColor   *textColor;
+@property (nonatomic, strong) UIColor   *highlightTextColor;
+
 @end
 
 NS_ASSUME_NONNULL_END

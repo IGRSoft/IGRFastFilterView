@@ -11,6 +11,16 @@
 #import "IGRBaseShaderFilter.h"
 #import "UIImage+IGRFastFilterView.h"
 #import "NSBundle+IGRFastFilterView.h"
+#import "IGRFastFilterViewCustomizer.h"
+
+@interface IGRFiltersbarCollectionView ()
+
+@property (nonatomic, assign, readwrite) CGSize cellSize;
+
+@property (nonatomic, strong) UIColor   *filterBarCellTextColor;
+@property (nonatomic, strong) UIColor   *filterBarCellHighlightTextColor;
+
+@end
 
 @implementation IGRFiltersbarCollectionView
 
@@ -18,8 +28,11 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
+    IGRFastFilterViewCustomizer *customizer = [IGRFastFilterViewCustomizer defaultCustomizer];
+    
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.itemSize = [self cellSize];
+    layout.itemSize = customizer.filterBarCellSize;
+    
     layout.minimumLineSpacing = 10.0;
     layout.minimumInteritemSpacing = 10.0;
     layout.headerReferenceSize = layout.footerReferenceSize = CGSizeZero;
@@ -32,6 +45,10 @@
         self.showsVerticalScrollIndicator = NO;
         self.showsHorizontalScrollIndicator = NO;
         self.contentInset = UIEdgeInsetsZero;
+        
+        self.filterBarCellTextColor = customizer.filterBarCellTextColor;
+        self.filterBarCellHighlightTextColor = customizer.filterBarCellHighlightTextColor;
+        self.cellSize = layout.itemSize;
         
         [self registerNib:[NSBundle filterbaCell] forCellWithReuseIdentifier:[self cellIdentifier]];
     }
@@ -64,7 +81,10 @@
     IGRFilterbarCell *cell = [self dequeueReusableCellWithReuseIdentifier:[self cellIdentifier]
                                                              forIndexPath:indexPath];
     
-    [cell setItem:self.items[indexPath.row]];
+    cell.selected = !indexPath.item;
+    [cell setItem:self.items[indexPath.item]];
+    cell.textColor = self.filterBarCellTextColor;
+    cell.highlightTextColor = self.filterBarCellHighlightTextColor;
     
     return cell;
 }
@@ -86,18 +106,12 @@
 
 #pragma mark - Private
 
-- (CGSize)cellSize
-{
-    return CGSizeMake(106.0, 120.0);  //TODO: Add to config
-}
-
 - (CGSize)previewSize
 {
     static CGSize previewSize;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        CGSize selfSize = self.frame.size;
-        previewSize = CGSizeMake(selfSize.height, selfSize.height);
+        previewSize = CGSizeMake(self.cellSize.height, self.cellSize.height);
     });
     
     return previewSize;

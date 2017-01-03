@@ -45,6 +45,8 @@
 		A5BCAF971E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCAF871E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m */; };
 		A5BCAF981E1A9EAD007D6E03 /* IGROriginalShaderFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = A5BCAF881E1A9EAD007D6E03 /* IGROriginalShaderFilter.h */; };
 		A5BCAF991E1A9EAD007D6E03 /* IGROriginalShaderFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCAF891E1A9EAD007D6E03 /* IGROriginalShaderFilter.m */; };
+		A5BCAFBF1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h in Headers */ = {isa = PBXBuildFile; fileRef = A5BCAFBD1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h */; };
+		A5BCAFC01E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCAFBE1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m */; };
 		A5D409041E1A4B13006D2A49 /* IF1977Filter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F31E1A4B13006D2A49 /* IF1977Filter */; };
 		A5D409051E1A4B13006D2A49 /* IFAmaroFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F41E1A4B13006D2A49 /* IFAmaroFilter */; };
 		A5D409061E1A4B13006D2A49 /* IFBrannanFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F51E1A4B13006D2A49 /* IFBrannanFilter */; };
@@ -169,6 +171,8 @@
 		A5BCAF871E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRBaseShaderFilterConstants.m; sourceTree = "<group>"; };
 		A5BCAF881E1A9EAD007D6E03 /* IGROriginalShaderFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGROriginalShaderFilter.h; sourceTree = "<group>"; };
 		A5BCAF891E1A9EAD007D6E03 /* IGROriginalShaderFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGROriginalShaderFilter.m; sourceTree = "<group>"; };
+		A5BCAFBD1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRFastFilterViewCustomizer.h; sourceTree = "<group>"; };
+		A5BCAFBE1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRFastFilterViewCustomizer.m; sourceTree = "<group>"; };
 		A5D408F31E1A4B13006D2A49 /* IF1977Filter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IF1977Filter; sourceTree = "<group>"; };
 		A5D408F41E1A4B13006D2A49 /* IFAmaroFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFAmaroFilter; sourceTree = "<group>"; };
 		A5D408F51E1A4B13006D2A49 /* IFBrannanFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFBrannanFilter; sourceTree = "<group>"; };
@@ -339,9 +343,11 @@
 			children = (
 				A5BCAF771E1A9EAD007D6E03 /* Category */,
 				A5BCAF7C1E1A9EAD007D6E03 /* CustomViews */,
+				A5BCAF831E1A9EAD007D6E03 /* ShaderFilters */,
 				A5BCAF811E1A9EAD007D6E03 /* IGRFastFilterView.h */,
 				A5BCAF821E1A9EAD007D6E03 /* IGRFastFilterView.m */,
-				A5BCAF831E1A9EAD007D6E03 /* ShaderFilters */,
+				A5BCAFBD1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h */,
+				A5BCAFBE1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m */,
 			);
 			path = IGRFastFilterView;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				A5BCAF8A1E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.h in Headers */,
 				A5BCAF921E1A9EAD007D6E03 /* IGRFastFilterView.h in Headers */,
 				A5BCAF941E1A9EAD007D6E03 /* IGRBaseShaderFilter.h in Headers */,
+				A5BCAFBF1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h in Headers */,
 				A5BCAF981E1A9EAD007D6E03 /* IGROriginalShaderFilter.h in Headers */,
 				A576AA551E1A96CC002A0113 /* IGRInstaFilterViewFramework.h in Headers */,
 			);
@@ -561,6 +568,7 @@
 				A5BCAF8F1E1A9EAD007D6E03 /* IGRFilterbarCell.m in Sources */,
 				A5BCAF931E1A9EAD007D6E03 /* IGRFastFilterView.m in Sources */,
 				A5BCAF971E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m in Sources */,
+				A5BCAFC01E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m in Sources */,
 				A5BCAF951E1A9EAD007D6E03 /* IGRBaseShaderFilter.m in Sources */,
 				A5BCAF8D1E1A9EAD007D6E03 /* UIImage+IGRFastFilterView.m in Sources */,
 				A5BCAF8B1E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.m in Sources */,

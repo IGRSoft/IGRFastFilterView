@@ -312,18 +312,6 @@
     return resources;
 }
 
-- (void)getPreview:(IGRBaseShaderFilterCompletionBlock)completion
-{
-    if (self.preview)
-    {
-        completion(self.preview);
-    }
-    else
-    {
-        [self.completionBlocks addObject:[completion copy]];
-    }
-}
-
 - (IGRBaseShaderFilterCancelBlock)processImage:(UIImage *)image
                                 completeBlock:(IGRBaseShaderFilterCompletionBlock)completeBlock
 {
@@ -391,6 +379,18 @@
             innerCancel();
         }
     };
+}
+
+- (void)preview:(IGRBaseShaderFilterCompletionBlock)completion
+{
+    if (self.preview)
+    {
+        completion(self.preview);
+    }
+    else
+    {
+        [self.completionBlocks addObject:[completion copy]];
+    }
 }
 
 - (void)processPreview:(UIImage *)image
