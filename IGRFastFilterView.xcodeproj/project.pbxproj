@@ -8,26 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		91E21822F2F308564B3DA98C /* Pods_IGRFastFilterView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19CDA1C48168C419CC4E931E /* Pods_IGRFastFilterView.framework */; };
+		A562CEC41E229C710065436F /* Configs in Resources */ = {isa = PBXBuildFile; fileRef = A562CEC11E229C710065436F /* Configs */; };
+		A562CEC51E229C710065436F /* Images in Resources */ = {isa = PBXBuildFile; fileRef = A562CEC21E229C710065436F /* Images */; };
+		A562CEC61E229C710065436F /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = A562CEC31E229C710065436F /* Shaders */; };
 		A576AA551E1A96CC002A0113 /* IGRInstaFilterViewFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = A576AA531E1A96CC002A0113 /* IGRInstaFilterViewFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5B63CEB1E1643FB000E5F2C /* IF1977Filter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C971E164391000E5F2C /* IF1977Filter.fsh */; };
-		A5B63CEC1E1643FB000E5F2C /* IFAmaroFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C981E164391000E5F2C /* IFAmaroFilter.fsh */; };
-		A5B63CED1E1643FB000E5F2C /* IFBrannanFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C991E164391000E5F2C /* IFBrannanFilter.fsh */; };
-		A5B63CEE1E1643FB000E5F2C /* IFEarlybirdFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C9A1E164391000E5F2C /* IFEarlybirdFilter.fsh */; };
-		A5B63CEF1E1643FB000E5F2C /* IFHefeFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C9B1E164391000E5F2C /* IFHefeFilter.fsh */; };
-		A5B63CF01E1643FB000E5F2C /* IFHudsonFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C9C1E164391000E5F2C /* IFHudsonFilter.fsh */; };
-		A5B63CF11E1643FB000E5F2C /* IFInkwellFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C9D1E164391000E5F2C /* IFInkwellFilter.fsh */; };
-		A5B63CF21E1643FB000E5F2C /* IFLomoFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C9E1E164391000E5F2C /* IFLomoFilter.fsh */; };
-		A5B63CF31E1643FB000E5F2C /* IFLordKelvinFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63C9F1E164391000E5F2C /* IFLordKelvinFilter.fsh */; };
-		A5B63CF41E1643FB000E5F2C /* IFNashvilleFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA01E164391000E5F2C /* IFNashvilleFilter.fsh */; };
-		A5B63CF51E1643FB000E5F2C /* IFOriginalFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA11E164391000E5F2C /* IFOriginalFilter.fsh */; };
-		A5B63CF61E1643FB000E5F2C /* IFRiseFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA21E164391000E5F2C /* IFRiseFilter.fsh */; };
-		A5B63CF71E1643FB000E5F2C /* IFSierraFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA31E164391000E5F2C /* IFSierraFilter.fsh */; };
-		A5B63CF81E1643FB000E5F2C /* IFSutroFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA41E164391000E5F2C /* IFSutroFilter.fsh */; };
-		A5B63CF91E1643FB000E5F2C /* IFToasterFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA51E164391000E5F2C /* IFToasterFilter.fsh */; };
-		A5B63CFA1E1643FB000E5F2C /* IFValenciaFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA61E164391000E5F2C /* IFValenciaFilter.fsh */; };
-		A5B63CFB1E1643FB000E5F2C /* IFWaldenFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA71E164391000E5F2C /* IFWaldenFilter.fsh */; };
-		A5B63CFC1E1643FB000E5F2C /* IFXprollFilter.fsh in Copy Shaders */ = {isa = PBXBuildFile; fileRef = A5B63CA81E164391000E5F2C /* IFXprollFilter.fsh */; };
-		A5B63CFE1E164437000E5F2C /* filters.plist in Copy Configs */ = {isa = PBXBuildFile; fileRef = A5B63C691E164391000E5F2C /* filters.plist */; };
 		A5B63D4A1E1649F3000E5F2C /* IGRFilterbarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B63CAA1E164391000E5F2C /* IGRFilterbarCell.xib */; };
 		A5BCAF8A1E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.h in Headers */ = {isa = PBXBuildFile; fileRef = A5BCAF781E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.h */; };
 		A5BCAF8B1E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCAF791E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.m */; };
@@ -45,23 +29,6 @@
 		A5BCAF971E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCAF871E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m */; };
 		A5BCAFBF1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h in Headers */ = {isa = PBXBuildFile; fileRef = A5BCAFBD1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h */; };
 		A5BCAFC01E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m in Sources */ = {isa = PBXBuildFile; fileRef = A5BCAFBE1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m */; };
-		A5D409041E1A4B13006D2A49 /* IF1977Filter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F31E1A4B13006D2A49 /* IF1977Filter */; };
-		A5D409051E1A4B13006D2A49 /* IFAmaroFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F41E1A4B13006D2A49 /* IFAmaroFilter */; };
-		A5D409061E1A4B13006D2A49 /* IFBrannanFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F51E1A4B13006D2A49 /* IFBrannanFilter */; };
-		A5D409071E1A4B13006D2A49 /* IFEarlybirdFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F61E1A4B13006D2A49 /* IFEarlybirdFilter */; };
-		A5D409081E1A4B13006D2A49 /* IFHefeFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F71E1A4B13006D2A49 /* IFHefeFilter */; };
-		A5D409091E1A4B13006D2A49 /* IFHudsonFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F81E1A4B13006D2A49 /* IFHudsonFilter */; };
-		A5D4090A1E1A4B13006D2A49 /* IFInkwellFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408F91E1A4B13006D2A49 /* IFInkwellFilter */; };
-		A5D4090B1E1A4B13006D2A49 /* IFLomoFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408FA1E1A4B13006D2A49 /* IFLomoFilter */; };
-		A5D4090C1E1A4B13006D2A49 /* IFLordKelvinFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408FB1E1A4B13006D2A49 /* IFLordKelvinFilter */; };
-		A5D4090D1E1A4B13006D2A49 /* IFNashvilleFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408FC1E1A4B13006D2A49 /* IFNashvilleFilter */; };
-		A5D4090E1E1A4B13006D2A49 /* IFRiseFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408FD1E1A4B13006D2A49 /* IFRiseFilter */; };
-		A5D4090F1E1A4B13006D2A49 /* IFSierraFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408FE1E1A4B13006D2A49 /* IFSierraFilter */; };
-		A5D409101E1A4B13006D2A49 /* IFSutroFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D408FF1E1A4B13006D2A49 /* IFSutroFilter */; };
-		A5D409111E1A4B13006D2A49 /* IFToasterFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D409001E1A4B13006D2A49 /* IFToasterFilter */; };
-		A5D409121E1A4B13006D2A49 /* IFValenciaFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D409011E1A4B13006D2A49 /* IFValenciaFilter */; };
-		A5D409131E1A4B13006D2A49 /* IFWaldenFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D409021E1A4B13006D2A49 /* IFWaldenFilter */; };
-		A5D409141E1A4B13006D2A49 /* IFXprollFilter in Resources */ = {isa = PBXBuildFile; fileRef = A5D409031E1A4B13006D2A49 /* IFXprollFilter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,82 +42,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A5B63CEA1E1643D3000E5F2C /* Copy Shaders */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Shaders;
-			dstSubfolderSpec = 7;
-			files = (
-				A5B63CEB1E1643FB000E5F2C /* IF1977Filter.fsh in Copy Shaders */,
-				A5B63CEC1E1643FB000E5F2C /* IFAmaroFilter.fsh in Copy Shaders */,
-				A5B63CED1E1643FB000E5F2C /* IFBrannanFilter.fsh in Copy Shaders */,
-				A5B63CEE1E1643FB000E5F2C /* IFEarlybirdFilter.fsh in Copy Shaders */,
-				A5B63CEF1E1643FB000E5F2C /* IFHefeFilter.fsh in Copy Shaders */,
-				A5B63CF01E1643FB000E5F2C /* IFHudsonFilter.fsh in Copy Shaders */,
-				A5B63CF11E1643FB000E5F2C /* IFInkwellFilter.fsh in Copy Shaders */,
-				A5B63CF21E1643FB000E5F2C /* IFLomoFilter.fsh in Copy Shaders */,
-				A5B63CF31E1643FB000E5F2C /* IFLordKelvinFilter.fsh in Copy Shaders */,
-				A5B63CF41E1643FB000E5F2C /* IFNashvilleFilter.fsh in Copy Shaders */,
-				A5B63CF51E1643FB000E5F2C /* IFOriginalFilter.fsh in Copy Shaders */,
-				A5B63CF61E1643FB000E5F2C /* IFRiseFilter.fsh in Copy Shaders */,
-				A5B63CF71E1643FB000E5F2C /* IFSierraFilter.fsh in Copy Shaders */,
-				A5B63CF81E1643FB000E5F2C /* IFSutroFilter.fsh in Copy Shaders */,
-				A5B63CF91E1643FB000E5F2C /* IFToasterFilter.fsh in Copy Shaders */,
-				A5B63CFA1E1643FB000E5F2C /* IFValenciaFilter.fsh in Copy Shaders */,
-				A5B63CFB1E1643FB000E5F2C /* IFWaldenFilter.fsh in Copy Shaders */,
-				A5B63CFC1E1643FB000E5F2C /* IFXprollFilter.fsh in Copy Shaders */,
-			);
-			name = "Copy Shaders";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A5B63CFD1E164424000E5F2C /* Copy Configs */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Configs;
 			dstSubfolderSpec = 7;
 			files = (
-				A5B63CFE1E164437000E5F2C /* filters.plist in Copy Configs */,
 			);
 			name = "Copy Configs";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5B63CFF1E164451000E5F2C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Images;
-			dstSubfolderSpec = 7;
-			files = (
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19CDA1C48168C419CC4E931E /* Pods_IGRFastFilterView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IGRFastFilterView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A562CEC11E229C710065436F /* Configs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configs; sourceTree = "<group>"; };
+		A562CEC21E229C710065436F /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		A562CEC31E229C710065436F /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		A576AA511E1A96CC002A0113 /* IGRFastFilterView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IGRFastFilterView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A576AA531E1A96CC002A0113 /* IGRInstaFilterViewFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGRInstaFilterViewFramework.h; sourceTree = "<group>"; };
 		A576AA541E1A96CC002A0113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5B63BE01E16430C000E5F2C /* IGRFastFilterViewResources.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IGRFastFilterViewResources.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B63BE21E16430D000E5F2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A5B63C691E164391000E5F2C /* filters.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = filters.plist; sourceTree = "<group>"; };
-		A5B63C971E164391000E5F2C /* IF1977Filter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IF1977Filter.fsh; sourceTree = "<group>"; };
-		A5B63C981E164391000E5F2C /* IFAmaroFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFAmaroFilter.fsh; sourceTree = "<group>"; };
-		A5B63C991E164391000E5F2C /* IFBrannanFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFBrannanFilter.fsh; sourceTree = "<group>"; };
-		A5B63C9A1E164391000E5F2C /* IFEarlybirdFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFEarlybirdFilter.fsh; sourceTree = "<group>"; };
-		A5B63C9B1E164391000E5F2C /* IFHefeFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFHefeFilter.fsh; sourceTree = "<group>"; };
-		A5B63C9C1E164391000E5F2C /* IFHudsonFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFHudsonFilter.fsh; sourceTree = "<group>"; };
-		A5B63C9D1E164391000E5F2C /* IFInkwellFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFInkwellFilter.fsh; sourceTree = "<group>"; };
-		A5B63C9E1E164391000E5F2C /* IFLomoFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFLomoFilter.fsh; sourceTree = "<group>"; };
-		A5B63C9F1E164391000E5F2C /* IFLordKelvinFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFLordKelvinFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA01E164391000E5F2C /* IFNashvilleFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFNashvilleFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA11E164391000E5F2C /* IFOriginalFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFOriginalFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA21E164391000E5F2C /* IFRiseFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFRiseFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA31E164391000E5F2C /* IFSierraFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFSierraFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA41E164391000E5F2C /* IFSutroFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFSutroFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA51E164391000E5F2C /* IFToasterFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFToasterFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA61E164391000E5F2C /* IFValenciaFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFValenciaFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA71E164391000E5F2C /* IFWaldenFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFWaldenFilter.fsh; sourceTree = "<group>"; };
-		A5B63CA81E164391000E5F2C /* IFXprollFilter.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = IFXprollFilter.fsh; sourceTree = "<group>"; };
 		A5B63CAA1E164391000E5F2C /* IGRFilterbarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IGRFilterbarCell.xib; sourceTree = "<group>"; };
 		A5BCAF631E1A9854007D6E03 /* IGRInstaFilterView.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = IGRInstaFilterView.modulemap; sourceTree = "<group>"; };
 		A5BCAF781E1A9EAD007D6E03 /* NSBundle+IGRFastFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+IGRFastFilterView.h"; sourceTree = "<group>"; };
@@ -169,23 +82,6 @@
 		A5BCAF871E1A9EAD007D6E03 /* IGRBaseShaderFilterConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRBaseShaderFilterConstants.m; sourceTree = "<group>"; };
 		A5BCAFBD1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRFastFilterViewCustomizer.h; sourceTree = "<group>"; };
 		A5BCAFBE1E1B570A007D6E03 /* IGRFastFilterViewCustomizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRFastFilterViewCustomizer.m; sourceTree = "<group>"; };
-		A5D408F31E1A4B13006D2A49 /* IF1977Filter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IF1977Filter; sourceTree = "<group>"; };
-		A5D408F41E1A4B13006D2A49 /* IFAmaroFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFAmaroFilter; sourceTree = "<group>"; };
-		A5D408F51E1A4B13006D2A49 /* IFBrannanFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFBrannanFilter; sourceTree = "<group>"; };
-		A5D408F61E1A4B13006D2A49 /* IFEarlybirdFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFEarlybirdFilter; sourceTree = "<group>"; };
-		A5D408F71E1A4B13006D2A49 /* IFHefeFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFHefeFilter; sourceTree = "<group>"; };
-		A5D408F81E1A4B13006D2A49 /* IFHudsonFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFHudsonFilter; sourceTree = "<group>"; };
-		A5D408F91E1A4B13006D2A49 /* IFInkwellFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFInkwellFilter; sourceTree = "<group>"; };
-		A5D408FA1E1A4B13006D2A49 /* IFLomoFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFLomoFilter; sourceTree = "<group>"; };
-		A5D408FB1E1A4B13006D2A49 /* IFLordKelvinFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFLordKelvinFilter; sourceTree = "<group>"; };
-		A5D408FC1E1A4B13006D2A49 /* IFNashvilleFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFNashvilleFilter; sourceTree = "<group>"; };
-		A5D408FD1E1A4B13006D2A49 /* IFRiseFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFRiseFilter; sourceTree = "<group>"; };
-		A5D408FE1E1A4B13006D2A49 /* IFSierraFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFSierraFilter; sourceTree = "<group>"; };
-		A5D408FF1E1A4B13006D2A49 /* IFSutroFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFSutroFilter; sourceTree = "<group>"; };
-		A5D409001E1A4B13006D2A49 /* IFToasterFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFToasterFilter; sourceTree = "<group>"; };
-		A5D409011E1A4B13006D2A49 /* IFValenciaFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFValenciaFilter; sourceTree = "<group>"; };
-		A5D409021E1A4B13006D2A49 /* IFWaldenFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFWaldenFilter; sourceTree = "<group>"; };
-		A5D409031E1A4B13006D2A49 /* IFXprollFilter */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IFXprollFilter; sourceTree = "<group>"; };
 		BFE2B3A8089D6E15872EC259 /* Pods-IGRFastFilterView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGRFastFilterView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IGRFastFilterView/Pods-IGRFastFilterView.debug.xcconfig"; sourceTree = "<group>"; };
 		D34632D8A78DD7018CB29E73 /* Pods-IGRFastFilterView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGRFastFilterView.release.xcconfig"; path = "Pods/Target Support Files/Pods-IGRFastFilterView/Pods-IGRFastFilterView.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -260,70 +156,13 @@
 		A5B63BE11E16430D000E5F2C /* IGRFastFilterViewResources */ = {
 			isa = PBXGroup;
 			children = (
-				A5B63C681E164391000E5F2C /* Configs */,
-				A5B63C6A1E164391000E5F2C /* Images */,
-				A5B63C961E164391000E5F2C /* Shaders */,
+				A562CEC11E229C710065436F /* Configs */,
+				A562CEC21E229C710065436F /* Images */,
+				A562CEC31E229C710065436F /* Shaders */,
 				A5B63CA91E164391000E5F2C /* Xibs */,
 				A5B63BE21E16430D000E5F2C /* Info.plist */,
 			);
 			path = IGRFastFilterViewResources;
-			sourceTree = "<group>";
-		};
-		A5B63C681E164391000E5F2C /* Configs */ = {
-			isa = PBXGroup;
-			children = (
-				A5B63C691E164391000E5F2C /* filters.plist */,
-			);
-			path = Configs;
-			sourceTree = "<group>";
-		};
-		A5B63C6A1E164391000E5F2C /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				A5D408F31E1A4B13006D2A49 /* IF1977Filter */,
-				A5D408F41E1A4B13006D2A49 /* IFAmaroFilter */,
-				A5D408F51E1A4B13006D2A49 /* IFBrannanFilter */,
-				A5D408F61E1A4B13006D2A49 /* IFEarlybirdFilter */,
-				A5D408F71E1A4B13006D2A49 /* IFHefeFilter */,
-				A5D408F81E1A4B13006D2A49 /* IFHudsonFilter */,
-				A5D408F91E1A4B13006D2A49 /* IFInkwellFilter */,
-				A5D408FA1E1A4B13006D2A49 /* IFLomoFilter */,
-				A5D408FB1E1A4B13006D2A49 /* IFLordKelvinFilter */,
-				A5D408FC1E1A4B13006D2A49 /* IFNashvilleFilter */,
-				A5D408FD1E1A4B13006D2A49 /* IFRiseFilter */,
-				A5D408FE1E1A4B13006D2A49 /* IFSierraFilter */,
-				A5D408FF1E1A4B13006D2A49 /* IFSutroFilter */,
-				A5D409001E1A4B13006D2A49 /* IFToasterFilter */,
-				A5D409011E1A4B13006D2A49 /* IFValenciaFilter */,
-				A5D409021E1A4B13006D2A49 /* IFWaldenFilter */,
-				A5D409031E1A4B13006D2A49 /* IFXprollFilter */,
-			);
-			path = Images;
-			sourceTree = "<group>";
-		};
-		A5B63C961E164391000E5F2C /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				A5B63C971E164391000E5F2C /* IF1977Filter.fsh */,
-				A5B63C981E164391000E5F2C /* IFAmaroFilter.fsh */,
-				A5B63C991E164391000E5F2C /* IFBrannanFilter.fsh */,
-				A5B63C9A1E164391000E5F2C /* IFEarlybirdFilter.fsh */,
-				A5B63C9B1E164391000E5F2C /* IFHefeFilter.fsh */,
-				A5B63C9C1E164391000E5F2C /* IFHudsonFilter.fsh */,
-				A5B63C9D1E164391000E5F2C /* IFInkwellFilter.fsh */,
-				A5B63C9E1E164391000E5F2C /* IFLomoFilter.fsh */,
-				A5B63C9F1E164391000E5F2C /* IFLordKelvinFilter.fsh */,
-				A5B63CA01E164391000E5F2C /* IFNashvilleFilter.fsh */,
-				A5B63CA11E164391000E5F2C /* IFOriginalFilter.fsh */,
-				A5B63CA21E164391000E5F2C /* IFRiseFilter.fsh */,
-				A5B63CA31E164391000E5F2C /* IFSierraFilter.fsh */,
-				A5B63CA41E164391000E5F2C /* IFSutroFilter.fsh */,
-				A5B63CA51E164391000E5F2C /* IFToasterFilter.fsh */,
-				A5B63CA61E164391000E5F2C /* IFValenciaFilter.fsh */,
-				A5B63CA71E164391000E5F2C /* IFWaldenFilter.fsh */,
-				A5B63CA81E164391000E5F2C /* IFXprollFilter.fsh */,
-			);
-			path = Shaders;
 			sourceTree = "<group>";
 		};
 		A5B63CA91E164391000E5F2C /* Xibs */ = {
@@ -431,9 +270,7 @@
 				A5B63BDC1E16430C000E5F2C /* Sources */,
 				A5B63D491E1649E9000E5F2C /* Resources */,
 				A5B63BDD1E16430C000E5F2C /* Frameworks */,
-				A5B63CEA1E1643D3000E5F2C /* Copy Shaders */,
 				A5B63CFD1E164424000E5F2C /* Copy Configs */,
-				A5B63CFF1E164451000E5F2C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -496,24 +333,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5D4090E1E1A4B13006D2A49 /* IFRiseFilter in Resources */,
-				A5D409091E1A4B13006D2A49 /* IFHudsonFilter in Resources */,
-				A5D409061E1A4B13006D2A49 /* IFBrannanFilter in Resources */,
-				A5D4090A1E1A4B13006D2A49 /* IFInkwellFilter in Resources */,
-				A5D409131E1A4B13006D2A49 /* IFWaldenFilter in Resources */,
-				A5D409081E1A4B13006D2A49 /* IFHefeFilter in Resources */,
-				A5D409051E1A4B13006D2A49 /* IFAmaroFilter in Resources */,
-				A5D4090C1E1A4B13006D2A49 /* IFLordKelvinFilter in Resources */,
-				A5D4090F1E1A4B13006D2A49 /* IFSierraFilter in Resources */,
-				A5D409121E1A4B13006D2A49 /* IFValenciaFilter in Resources */,
-				A5D409141E1A4B13006D2A49 /* IFXprollFilter in Resources */,
-				A5D409111E1A4B13006D2A49 /* IFToasterFilter in Resources */,
-				A5D4090D1E1A4B13006D2A49 /* IFNashvilleFilter in Resources */,
-				A5D409101E1A4B13006D2A49 /* IFSutroFilter in Resources */,
-				A5D4090B1E1A4B13006D2A49 /* IFLomoFilter in Resources */,
-				A5D409071E1A4B13006D2A49 /* IFEarlybirdFilter in Resources */,
+				A562CEC41E229C710065436F /* Configs in Resources */,
+				A562CEC61E229C710065436F /* Shaders in Resources */,
+				A562CEC51E229C710065436F /* Images in Resources */,
 				A5B63D4A1E1649F3000E5F2C /* IGRFilterbarCell.xib in Resources */,
-				A5D409041E1A4B13006D2A49 /* IF1977Filter in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

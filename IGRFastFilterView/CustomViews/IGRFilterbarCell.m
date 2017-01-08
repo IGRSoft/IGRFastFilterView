@@ -38,7 +38,7 @@
     
     __weak typeof(self) weak = self;
     [self.item processImage:thumbImage completeBlock:^(UIImage * _Nullable processedImage) {
-        self.icon.image = processedImage;
+        weak.icon.image = processedImage;
     }];
 }
 

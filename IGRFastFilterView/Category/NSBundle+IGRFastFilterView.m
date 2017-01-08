@@ -30,7 +30,7 @@
 + (NSString *)shaderForName:(NSString *)name
 {
     NSString *path = [[NSBundle igr_filtersResourceBundle] pathForResource:name
-                                                                    ofType:@"fsh"
+                                                                    ofType:@"glsl"
                                                                inDirectory:@"Shaders"];
     return [[NSString alloc] initWithContentsOfFile:path
                                                        encoding:NSUTF8StringEncoding
