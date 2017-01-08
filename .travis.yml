@@ -1,8 +1,5 @@
 language: objective-c
 osx_image: xcode8
-xcode_workspace: IGRFastFilterView.xcworkspace
-xcode_scheme: IGRFastFilterView
-sdk: iphonesimulator
 sudo: false
 env:
   global:
@@ -10,3 +7,6 @@ env:
   - LANGUAGE=en_US.UTF-8
 before_install:
   - pod install
+script: 
+  - set -o pipefail
+  - xcodebuild -workspace IGRFastFilterView.xcworkspace -scheme IGRFastFilterView -sdk iphonesimulator
