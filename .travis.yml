@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode8
+xcode_workspace: IGRFastFilterView.xcworkspace
+xcode_scheme: IGRFastFilterView
+before_install: 
+    -git submodule update --init --recursive
+    -pod install
