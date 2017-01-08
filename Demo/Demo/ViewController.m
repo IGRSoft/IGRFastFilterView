@@ -32,7 +32,7 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self
                       selector:@selector(setupWorkImage:)
-                          name:kWorkImageNotification object:nil];    
+                          name:kWorkImageNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -63,7 +63,7 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 #pragma mark - Setter / Getter
 
 - (void)setInstaFiltersView:(IGRFastFilterView *)instaFiltersView
-{    
+{
     _instaFiltersView = instaFiltersView;
 }
 
@@ -83,9 +83,7 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 
 - (UIImage *)prepareImage
 {
-    UIImage *image = [self.instaFiltersView.processedImage copy];
-    
-    return image;
+    return self.instaFiltersView.processedImage;
 }
 
 #pragma mark - Action
@@ -100,42 +98,30 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
     alert.popoverPresentationController.barButtonItem = sender;
     
     __weak typeof(self) weak = self;
+    void(^completeActionBlock)(UIImagePickerControllerSourceType) = ^(UIImagePickerControllerSourceType type) {
+        UIImagePickerController *pickerView = [[UIImagePickerController alloc] init];
+        pickerView.delegate = weak;
+        [pickerView setSourceType:type];
+        [self presentViewController:pickerView animated:YES completion:nil];
+    };
+    
     UIAlertAction *action = [UIAlertAction actionWithTitle:NSLocalizedString(@"From Library", @"")
                                                      style:UIAlertActionStyleDefault
-                                                   handler:^(UIAlertAction * action)
-                             {
-                                 
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                                 UIImagePickerController *pickerView = [[UIImagePickerController alloc] init];
-                                 pickerView.delegate = weak;
-                                 [pickerView setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-                                 [self presentViewController:pickerView animated:YES completion:nil];
-                             }];
+                                                   handler:^(UIAlertAction * action) {
+                                                       completeActionBlock(UIImagePickerControllerSourceTypePhotoLibrary);
+                                                   }];
     [alert addAction:action];
     
     UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"From Camera", @"")
                                                            style:UIAlertActionStyleDefault
-                                                         handler:^(UIAlertAction * action)
-                                   {
-                                       [alert dismissViewControllerAnimated:YES completion:nil];
-                                       
-                                       UIImagePickerController *pickerView = [[UIImagePickerController alloc] init];
-                                       pickerView.delegate = weak;
-                                       [pickerView setSourceType:UIImagePickerControllerSourceTypeCamera];
-                                       [self presentViewController:pickerView animated:YES completion:nil];
-                                   }];
+                                                         handler:^(UIAlertAction * action) {
+                                                             completeActionBlock(UIImagePickerControllerSourceTypeCamera);
+                                                         }];
     [alert addAction:cameraAction];
-    
     
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", @"")
                                                      style:UIAlertActionStyleCancel
-                                                   handler:^(UIAlertAction * action)
-                             {
-                                 
-                                 [alert dismissViewControllerAnimated:YES completion:nil];
-                             }];
-				
+                                                   handler:nil];
 				
     [alert addAction:cancel];
     
@@ -144,15 +130,14 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 
 - (IBAction)onTouchShareButton:(UIBarButtonItem *)sender
 {
-    __unused UIImage *image = [self prepareImage];
+    UIImage *image = [self prepareImage];
     
     UIActivityViewController *avc = [[UIActivityViewController alloc] initWithActivityItems:@[image]
                                                                       applicationActivities:nil];
     avc.popoverPresentationController.barButtonItem = sender;
     avc.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
     
-    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [viewController presentViewController:avc animated:YES completion:nil];
+    [self presentViewController:avc animated:YES completion:nil];
 }
 
 #pragma mark - NSNotificationCenter
@@ -168,12 +153,12 @@ static NSString * const kWorkImageNotification = @"WorkImageNotification";
 
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
-{    
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
+{
     UIImage *img = [info valueForKey:UIImagePickerControllerOriginalImage];
     [[NSNotificationCenter defaultCenter] postNotificationName:kWorkImageNotification
                                                         object:img];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

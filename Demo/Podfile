@@ -4,8 +4,10 @@ use_frameworks!
 
 source "https://github.com/CocoaPods/Specs.git"
 
+pod 'IGRFastFilterView', :path => '../'
+
 target 'Demo' do
+end
 
-	pod 'IGRFastFilterView', :path => '../'
-
+target 'DemoSwift' do
 end
