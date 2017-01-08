@@ -55,6 +55,8 @@ github "IGRSoft/IGRFastFilterView"
 @end
 ```
 
+> see sample Xcode project in /Demo
+
 ## Customization
 
 ```objective-c
@@ -77,6 +79,10 @@ github "IGRSoft/IGRFastFilterView"
 ## TODO
 
 - Add Filter to Video
+
+## Credits
+
+`IGRFastFilterView` is owned and maintained by the [IGR Software and Vitalii Parovishnyk](https://igrsoft.com).
 
 ## License
 
