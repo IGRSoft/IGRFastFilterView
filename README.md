@@ -63,6 +63,10 @@ github "IGRSoft/IGRFastFilterView"
 
 - Add View to Storyboard or XIB 
 - Set Custom Class to IGRFastFilterView
+
+<details>
+  <summary>Objective-C</summary>
+  <p>
 ```objective-c
 @import IGRFastFilterView;
 
@@ -80,14 +84,32 @@ github "IGRSoft/IGRFastFilterView"
 }
 
 - (UIImage *)getProcessedImage
-{
-    UIImage *image = [self.instaFiltersView.processedImage copy];
-    
-    return image;
+{    
+    return self.instaFiltersView.processedImage;
 }
 
 @end
 ```
+</p></details>
+<details>
+  <summary>Swift 3.0</summary>
+  <p>
+```swift
+import IGRFastFilterView
+
+class ViewController: UIViewController {
+    @IBOutlet weak fileprivate var instaFiltersView: IGRFastFilterView?
+    
+    func setupWorkImage(image: UIImage) {
+        instaFiltersView?.setImage(image)
+    }
+    
+    func prepareImage() -> UIImage {
+        return self.instaFiltersView!.processedImage!;
+    }
+}
+```
+</p></details>
 
 > see sample Xcode project in /Demo
 
