@@ -1,6 +1,7 @@
 # IGRFastFilterView
-
-<div style="float: right"><img src="https://raw.githubusercontent.com/IGRSoft/IGRFastFilterView/master/Screenshots/screen.png" /></div>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/IGRSoft/IGRFastFilterView/master/Screenshots/screen.png" width="120"/>
+</p>
 
 Replicate Instragram-style filters in Objective-C.
 
