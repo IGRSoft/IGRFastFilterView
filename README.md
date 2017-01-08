@@ -3,7 +3,7 @@
   <img src="https://raw.githubusercontent.com/IGRSoft/IGRFastFilterView/master/Screenshots/screen.png" width="120"/>
 </p>
 
-Replicate Instragram-style filters in Objective-C.
+Replicate Instragram-style filters in Objective-C (Swift 3.0 Compatibility).
 
 [![Build Status](https://travis-ci.org/IGRSoft/IGRFastFilterView.svg)](https://travis-ci.org/IGRSoft/IGRFastFilterView)
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg?style=flat)](http://www.apple.com/ios/)
