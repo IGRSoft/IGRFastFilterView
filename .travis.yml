@@ -1,9 +1,7 @@
 language: objective-c
 osx_image: xcode8
-before_install:
-    - brew update
-    - brew upgrade xctool
+xcode_workspace: IGRFastFilterView.xcworkspace
+before_install: IGRFastFilterView
     - export LANG=en_US.UTF-8
     - gem install cocoapods
     - pod install
-script: xctool -workspace IGRFastFilterView.xcworkspace -scheme IGRFastFilterView build
