@@ -2,6 +2,13 @@
 
 Replicate Instragram-style filters in Objective-C.
 
+##How It Works
+It is built upon [GPUImage](https://github.com/BradLarson/GPUImage), written open sourced framework by [Brad Larson](http://stackoverflow.com/users/19679/brad-larson) that hanles low-level GPU interactions on **IGRFastFilterView**'s behalf.
+
+The GPUImage framework is a BSD-licensed iOS library that lets you apply GPU-accelerated filters and other effects to images, live camera video, and movies. In comparison to Core Image (part of iOS 5.0), GPUImage allows you to write your own custom filters, supports deployment to iOS 4.0, and has a simpler interface. However, it currently lacks some of the more advanced features of Core Image, such as facial detection.
+
+For massively parallel operations like processing images or live video frames, GPUs have some significant performance advantages over CPUs. On an iPhone 4, a simple image filter can be over 100 times faster to perform on the GPU than an equivalent CPU-based filter.
+
 ## Requirements
 
 - Xcode 8.0+
@@ -77,8 +84,9 @@ github "IGRSoft/IGRFastFilterView"
 ```
 
 ## TODO
-
-- Add Filter to Video
+ - [x] Add Filters to Images
+ - [ ] Add Filters to Video
+ - [ ] Add Custom Filters
 
 ## Credits
 
