@@ -39,9 +39,10 @@
 
 + (UIImage *)imageForName:(NSString *)name forShaderName:(NSString *)shaderName
 {
+    NSString *dir = [@"Images" stringByAppendingPathComponent:shaderName];
     NSString *path = [[NSBundle igr_filtersResourceBundle] pathForResource:name
                                                                     ofType:@"png"
-                                                               inDirectory:shaderName];
+                                                               inDirectory:dir];
     return [[UIImage alloc] initWithContentsOfFile:path];
 }
 

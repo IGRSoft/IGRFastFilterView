@@ -125,16 +125,18 @@
         return;
     }
     
-    [GPUImageContext setActiveShaderProgram:filterProgram];
-    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO]
-                                                                           textureOptions:self.outputTextureOptions
-                                                                              onlyTexture:NO];
-    [outputFramebuffer activateFramebuffer];
-    
-    if (usingNextFrameForImageCapture)
-    {
-        [outputFramebuffer lock];
-    }
+    runSynchronouslyOnVideoProcessingQueue(^{
+        [GPUImageContext setActiveShaderProgram:filterProgram];
+        outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[self sizeOfFBO]
+                                                                               textureOptions:self.outputTextureOptions
+                                                                                  onlyTexture:NO];
+        [outputFramebuffer activateFramebuffer];
+        
+        if (usingNextFrameForImageCapture)
+        {
+            [outputFramebuffer lock];
+        }
+    });
     
     [self setUniformsForProgramAtIndex:0];
     
@@ -225,7 +227,8 @@
 #pragma mark -
 #pragma mark GPUImageInput
 
-- (void)setInputFramebuffer:(GPUImageFramebuffer *)newInputFramebuffer atIndex:(NSInteger)textureIndex
+- (void)setInputFramebuffer:(GPUImageFramebuffer *)newInputFramebuffer
+                    atIndex:(NSInteger)textureIndex
 {
     if (textureIndex == 0)
     {
@@ -293,7 +296,7 @@
 
 - (NSArray <GPUImagePicture *> *)resourcesForFiles:(NSArray <NSString *> *)files
 {
-    NSMutableArray *resources = [NSMutableArray arrayWithCapacity:files.count];
+    NSMutableArray *resources = [NSMutableArray array];
     
     for (NSString *file in files)
     {
@@ -324,14 +327,10 @@
         [picture addTarget:weak atTextureLocation:location++];
         [picture processImage];
         
-        NSArray *resources = weak.resources;
+        NSArray *resources = [weak.resources copy];
         for (GPUImagePicture *p in resources)
         {
-            if (![p.targets containsObject:weak])
-            {
-                [p addTarget:weak atTextureLocation:location++];
-            }
-            
+            [p addTarget:weak atTextureLocation:location++];
             [p processImage];
         }
         
@@ -343,13 +342,17 @@
         } @catch (NSException *exception) {
             
         } @finally {
+            [weak removeAllTargets];
+            [weak removeOutputFramebuffer];
+            
             if (isCanceled)
             {
                 return;
             }
             
-            if (CGSizeEqualToSize(resultImage.size, CGSizeZero)) {
-                innerCancel = [self processImage:image completeBlock:completeBlock];
+            if (!resultImage || CGSizeEqualToSize(resultImage.size, CGSizeZero)) {
+                
+                innerCancel = [weak processImage:image completeBlock:completeBlock];
                 
                 return;
             }
