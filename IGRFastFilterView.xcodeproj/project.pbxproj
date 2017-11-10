@@ -511,12 +511,11 @@
 			baseConfigurationReference = BFE2B3A8089D6E15872EC259 /* Pods-IGRFastFilterView.debug.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 100.1;
+				CURRENT_PROJECT_VERSION = 23;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DMP42GVPJ3;
-				DYLIB_COMPATIBILITY_VERSION = 100.0;
-				DYLIB_CURRENT_VERSION = 100.1;
+				DYLIB_COMPATIBILITY_VERSION = 001;
+				DYLIB_CURRENT_VERSION = 023;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IGRFastFilterViewFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -535,12 +534,11 @@
 			baseConfigurationReference = D34632D8A78DD7018CB29E73 /* Pods-IGRFastFilterView.release.xcconfig */;
 			buildSettings = {
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 100.1;
+				CURRENT_PROJECT_VERSION = 23;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = DMP42GVPJ3;
-				DYLIB_COMPATIBILITY_VERSION = 100.0;
-				DYLIB_CURRENT_VERSION = 100.1;
+				DYLIB_COMPATIBILITY_VERSION = 001;
+				DYLIB_CURRENT_VERSION = 023;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IGRFastFilterViewFramework/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -564,7 +562,6 @@
 				INFOPLIST_FILE = IGRFastFilterViewResources/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrsoft.IGRInstaFilterResources;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -580,7 +577,6 @@
 				INFOPLIST_FILE = IGRFastFilterViewResources/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.igrsoft.IGRInstaFilterResources;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
