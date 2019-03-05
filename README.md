@@ -1,4 +1,6 @@
-# IGRFastFilterView
+IGRFastFilterView
+=
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/IGRSoft/IGRFastFilterView/master/Screenshots/screen.png" width="120"/>
 </p>
@@ -10,7 +12,17 @@ Replicate Instragram-style filters in Objective-C (Swift 3.0 Compatibility).
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/IGRFastFilterView.svg)](https://img.shields.io/cocoapods/v/IGRFastFilterView.svg)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](https://opensource.org/licenses/MIT)
 
-## How It Works
+ ___
+### Contribute to Development Goals Here: 
+
+BTC: 16tGJzt4gJJBhBetpV6BuaWuNfxvkdkbt4
+
+BCH: bitcoincash:qpcwefpxddjqzdpcrx6tek3uh6x9v7t8tugu30jvks
+
+LTC: litecoin:MLZxuAdJCaW7LdM4sQuRazgdNvd8G2bdyt
+
+ ___
+### How It Works
 It is built upon [GPUImage](https://github.com/BradLarson/GPUImage), written open sourced framework by [Brad Larson](http://stackoverflow.com/users/19679/brad-larson) that hanles low-level GPU interactions on **IGRFastFilterView**'s behalf.
 
 The GPUImage framework is a BSD-licensed iOS library that lets you apply GPU-accelerated filters and other effects to images, live camera video, and movies. In comparison to Core Image (part of iOS 5.0), GPUImage allows you to write your own custom filters, supports deployment to iOS 4.0, and has a simpler interface. However, it currently lacks some of the more advanced features of Core Image, such as facial detection.
@@ -36,12 +48,14 @@ For massively parallel operations like processing images or live video frames, G
 - Walden
 - Xproll
 
-## Requirements
+ ___
+### Requirements
 
 - Xcode 8.0+
 - iOS 9.0+
 
-## Installation
+ ___
+### Installation
 
 ### CocoaPods
 
@@ -58,8 +72,8 @@ For [Carthage](https://github.com/Carthage/Carthage), add the following to your 
 ```ogdl
 github "IGRSoft/IGRFastFilterView"
 ```
-
-## Getting Started
+ ___
+### Getting Started
 
 - Add View to Storyboard or XIB 
 - Set Custom Class to IGRFastFilterView
@@ -113,7 +127,8 @@ class ViewController: UIViewController {
 
 > see sample Xcode project in /Demo
 
-## Customization
+ ___
+### Customization
 
 ```objective-c
 - (void)setupTheme
@@ -132,15 +147,18 @@ class ViewController: UIViewController {
 }
 ```
 
-## TODO
+ ___
+### TODO
  - [x] Add Filters to Images
  - [ ] Add Filters to Video
  - [ ] Add Custom Filters
 
-## Credits
+ ___
+### Credits
 
 `IGRFastFilterView` is owned and maintained by the [IGR Software and Vitalii Parovishnyk](https://igrsoft.com).
 
-## License
+ ___
+### License
 
 `IGRFastFilterView` is MIT-licensed. We also provide an additional patent grant.
